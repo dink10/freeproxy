@@ -8,6 +8,7 @@ import (
 
 	"github.com/patrickmn/go-cache"
 	"github.com/sirupsen/logrus"
+
 	"github.com/soluchok/freeproxy/providers"
 )
 
@@ -132,17 +133,17 @@ func New() *ProxyGenerator {
 			job:      make(chan string, 100),
 		}
 
-		//add providers to generator
+		// add providers to generator
 		instance.AddProvider(providers.NewFreeProxyList())
 		instance.AddProvider(providers.NewXseoIn())
 		instance.AddProvider(providers.NewFreeProxyListNet())
 		instance.AddProvider(providers.NewProxyList())
-		
-		//instance.AddProvider(providers.NewHidemyName())
-		//instance.AddProvider(providers.NewCoolProxy())
-		//instance.AddProvider(providers.NewProxyTech())
-		//instance.AddProvider(providers.NewPubProxy())
-		//run workers
+
+		// instance.AddProvider(providers.NewHidemyName())
+		// instance.AddProvider(providers.NewCoolProxy())
+		// instance.AddProvider(providers.NewProxyTech())
+		// instance.AddProvider(providers.NewPubProxy())
+		// run workers
 		go instance.run()
 	})
 	return instance

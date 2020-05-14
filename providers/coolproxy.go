@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/soluchok/gokogiri"
+	"github.com/moovweb/gokogiri"
 )
 
 const coolProxyURL = `https://www.cool-proxy.net/proxies/http_proxy_list/sort:score/direction:desc`
